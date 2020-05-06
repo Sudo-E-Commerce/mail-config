@@ -1,0 +1,22 @@
+{
+	"Giao thức": "Transport",
+	"Máy chủ SMTP": "Host",
+	"Cổng": "Port",
+	"Mã hóa bảo mật": "Encryption",
+	"Tên người dùng SMTP": "Username SMTP",
+	"Mật khẩu": "Password",
+	"Email Gửi đi": "Mail From Address",
+	"Tên đại diện": "Mail From Name",
+
+	"Gửi thử Email": "Test Send Email",
+	"Email của bạn": "Your Email",
+	"Email của bạn không được để trống": "Your Email is required",
+	"Đang kiểm tra. Vui lòng chờ giây lát!": "Checking in. Please wait a moment!",
+	"Có lỗi xảy ra! Lỗi:": "Have some error! Error:",
+
+	"Gửi thành công": "Send success!",
+	"Gửi thất bại": "Send fail!",
+	"Email không tồn tại": "Email is not exist!",
+
+	"x": "x"
+}
