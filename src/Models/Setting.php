@@ -34,6 +34,8 @@ class Setting extends BaseModel {
 				'value' 	=> $data
 			]);
 		}
+		// Xóa Cache setting nếu đã lưu
+		\Cache::pull('setting_'.$setting_name);
 	}
 
 	/**

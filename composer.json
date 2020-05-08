@@ -19,7 +19,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sudo\\MailConfig\\Providers\\MailConfigServiceProvider"
+                "Sudo\\MailConfig\\Providers\\MailConfigServiceProvider",
+                "Sudo\\MailConfig\\Providers\\CustomMailServiceProvider"
             ],
             "aliases": {}
         }
