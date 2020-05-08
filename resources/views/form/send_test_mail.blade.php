@@ -21,7 +21,7 @@
 				data = $(this).closest('form').serialize()+'&email='+email;
 				loadAjaxPost('{{route('admin.settings.test_mail')}}', data, {
 					beforeSend: function(){
-				        $('#test_mail_notificate').html('@lang('Đang kiểm tra! Vui lòng chờ giây lát!')');
+				        $('#test_mail_notificate').html('@lang('Đang kiểm tra. Vui lòng chờ giây lát!')');
 				    },
 				    success:function(result){
 				        $('#test_mail_notificate').html(result.message);
