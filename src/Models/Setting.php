@@ -35,7 +35,7 @@ class Setting extends BaseModel {
 			]);
 		}
 		// Xóa Cache setting nếu đã lưu
-		\Cache::pull('setting_'.$setting_name);
+		\Cache::pull('setting_'.$setting_name.'_'.\App::getLocale());
 	}
 
 	/**
