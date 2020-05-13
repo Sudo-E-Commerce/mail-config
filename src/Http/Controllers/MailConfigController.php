@@ -27,7 +27,9 @@ class MailConfigController extends AdminController
         // Giá trị mail mặc định
         $transport = [];
         foreach (array_keys(config('mail.mailers')) as $value) {
-        	$transport[$value] = $value;
+            if (in_array($value, ['smtp', 'ses', 'mailgun'])) {
+        	   $transport[$value] = $value;
+            }
         }
         // Khởi tạo form
         $form = new Form;
