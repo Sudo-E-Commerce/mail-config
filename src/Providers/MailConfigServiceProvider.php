@@ -85,9 +85,21 @@ class MailConfigServiceProvider extends ServiceProvider
     public function publish()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([
-                
-            ], 'sudo/mail-config');
+            $assets = [
+                //
+            ];
+            $config = [
+                //
+            ];
+            $all = array_merge($assets, $config);
+            // Chạy riêng
+            $this->publishes($all, 'sudo/mail-config');
+            $this->publishes($assets, 'sudo/mail-config/assets');
+            $this->publishes($config, 'sudo/mail-config/config');
+            // Khởi chạy chung theo core
+            $this->publishes($all, 'sudo/core');
+            $this->publishes($assets, 'sudo/core/assets');
+            $this->publishes($config, 'sudo/core/config');
         }
     }
 
