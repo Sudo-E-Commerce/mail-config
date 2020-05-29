@@ -18,6 +18,7 @@ class MailConfigController extends AdminController
 	public function mailConfig(Request $requests) {
 		$setting_name = 'mail_config';
         $title = "Cấu hình Mail";
+        $note = "Lựa chọn dịch vụ gửi Mail của bạn. Gửi thử Mail để kiểm tra trước khi lưu.";
         // Thêm hoặc cập nhật dữ liệu
         if (isset($requests->redirect)) {
         	$this->models->postData($requests, $setting_name);
@@ -41,7 +42,7 @@ class MailConfigController extends AdminController
         $form->action('editconfig');
         // Hiển thị form tại view
         return $form->render('custom', compact(
-        	'title'
+        	'title', 'note'
         ), 'MailConfig::form.form');
 	}
 
