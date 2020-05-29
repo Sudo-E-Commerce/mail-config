@@ -11,8 +11,9 @@ class MailConfigController extends AdminController
 {
 
 	function __construct() {
+        parent::__construct();
 		$this->models = new \Sudo\MailConfig\Models\Setting;
-		parent::__construct();
+        $this->table_name = $this->models->getTable();
 	}
 
 	public function mailConfig(Request $requests) {
