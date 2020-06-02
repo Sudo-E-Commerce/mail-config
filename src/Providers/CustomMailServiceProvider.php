@@ -7,10 +7,13 @@ use Illuminate\Support\ServiceProvider;
 class CustomMailServiceProvider extends ServiceProvider
 {
 	function boot() {
-		// Lấy dữ liệu cấu hình mail ra
-		$option = \Cache::rememberForever('setting_mail_config', function() {
-			return \DB::table('settings')->select('value')->where('key','mail_config')->first();
-		});
+        // Kiểm tra bảng đã tồn tại hay chưa
+        if (\Schema::hasTable('settings')) {
+    		// Lấy dữ liệu cấu hình mail ra
+    		$option = \Cache::rememberForever('setting_mail_config', function() {
+    			return \DB::table('settings')->select('value')->where('key','mail_config')->first();
+    		});
+        }
         $data = [];
         if (isset($option) && !empty($option)) {
             $data = json_decode(base64_decode($option->value), true);
